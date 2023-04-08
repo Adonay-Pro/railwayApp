@@ -1,20 +1,22 @@
 package railwayapp;
 
-public class RefrigeratedRailroadCar extends BasicRailroadFreightCar{
+public class RefrigeratedRailroadCar extends BasicRailroadFreightCar implements Railroad {
 
-    public RefrigeratedRailroadCar(String shipper, String security, double netWeight, double grossWeight, double length, double height, int numberOfSeats) {
-        super(shipper, security, netWeight, grossWeight, length, height, numberOfSeats);
+    String productTransported="";
+    Double temperatureRecommended;
+    /*ecommends that fresh beef, pork, lamb, and veal be transported at a temperature of 40°F (4.4°C) or below.
+    For frozen meat, the recommended temperature is 0°F (-17.8°C) or below. */
+
+    public RefrigeratedRailroadCar(double capacity, int slidingDoors, String productTransported, double temperatureRecommended ) {
+        super(capacity, slidingDoors);
+        this.productTransported = productTransported;
+        this.temperatureRecommended  =temperatureRecommended;
     }
-
 
     @Override
-    public String toString() {
-        return "RefrigeratedRailroadCar{" +
-                "shipper='" + shipper + '\'' +
-                ", netWeight=" + netWeight +
-                ", grossWeight=" + grossWeight +
-                ", numberOfSeats=" + numberOfSeats +
-                ", id=" + id +
-                '}';
+    public boolean electricalGrid(){
+        return true;
     }
+
+
 }

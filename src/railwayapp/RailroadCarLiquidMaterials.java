@@ -1,7 +1,21 @@
 package railwayapp;
 
-public class RailroadCarLiquidMaterials extends BasicRailroadFreightCar{
-    public RailroadCarLiquidMaterials(String shipper, String security, double netWeight, double grossWeight, double length, double height, int numberOfSeats) {
-        super(shipper, security, netWeight, grossWeight, length, height, numberOfSeats);
+public class RailroadCarLiquidMaterials extends BasicRailroadFreightCar implements Railroad {
+
+    double tankCapacity;
+    String materialTransported;
+
+    public RailroadCarLiquidMaterials(double capacity, int slidingDoors, double tankCapacity, String materialTransported ){
+        super(capacity,slidingDoors);
+        this.materialTransported = materialTransported;
+        this.tankCapacity = tankCapacity;
+
     }
+
+    @Override
+    public boolean electricalGrid(){
+        return false;
+    }
+
+
 }

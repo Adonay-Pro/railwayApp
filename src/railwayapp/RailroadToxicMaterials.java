@@ -1,19 +1,13 @@
 package railwayapp;
 
-public class RailroadToxicMaterials extends HeavyFreightCar{
+public class RailroadToxicMaterials extends HeavyFreightCar implements Railroad {
 
-    public RailroadToxicMaterials(String shipper, String security, double netWeight, double grossWeight, double length, double height, int numberOfSeats) {
-        super(shipper, security, netWeight, grossWeight, length, height, numberOfSeats);
-    }
+    String toxicMaterial;//Chlorine, Ammonia, Sulfuric acid, Pesticides
+    Boolean lockingMechanism = false;
 
-    @Override
-    public String toString() {
-        return "RailroadToxicMaterials{" +
-                "shipper='" + shipper + '\'' +
-                ", netWeight=" + netWeight +
-                ", grossWeight=" + grossWeight +
-                ", numberOfSeats=" + numberOfSeats +
-                ", id=" + id +
-                '}';
+    public RailroadToxicMaterials(double length, double capacity, String toxicMaterial, Boolean lockingMechanism) {
+        super(length, capacity);
+        this.toxicMaterial = toxicMaterial;
+        this.lockingMechanism = lockingMechanism;
     }
 }

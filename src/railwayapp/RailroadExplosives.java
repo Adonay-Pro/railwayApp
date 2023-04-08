@@ -1,19 +1,14 @@
 package railwayapp;
 
-public class RailroadExplosives extends HeavyFreightCar{
-    public RailroadExplosives(String shipper, String security, double netWeight, double grossWeight, double length, double height, int numberOfSeats) {
-        super(shipper, security, netWeight, grossWeight, length, height, numberOfSeats);
+public class RailroadExplosives extends HeavyFreightCar implements Railroad {
+
+    int pressureReliefValves;
+    String materialMadeOf;
+
+    public RailroadExplosives(double length, double capacity, int pressureReliefValves, String materialMadeOf) {
+        super(length, capacity);
+        this.pressureReliefValves = pressureReliefValves;
+        this.materialMadeOf = materialMadeOf;
     }
 
-
-    @Override
-    public String toString() {
-        return "RailroadExplosives{" +
-                "shipper='" + shipper + '\'' +
-                ", netWeight=" + netWeight +
-                ", grossWeight=" + grossWeight +
-                ", numberOfSeats=" + numberOfSeats +
-                ", id=" + id +
-                '}';
-    }
 }

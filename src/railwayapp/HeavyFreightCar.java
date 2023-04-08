@@ -1,31 +1,22 @@
 package railwayapp;
 
-public class HeavyFreightCar{
+public class HeavyFreightCar implements Railroad {
     public static int cont=0;
-    String shipper, securityInformation;
-    double netWeight, grossWeight, length, height;
-    int numberOfSeats, id;
+    int id;
+    double height, length, Capacity; //have a capacity of up to 125 tons or more, compared to the typical 70-ton capacity of a standard boxcar.
+    /*For example, some heavy-duty flatcars used for transporting steel coils or other heavy industrial goods can be up to 89 feet long and have a height of around 9 feet, while some specialized heavy-duty gondola cars used for
+    transporting bulk commodities such as coal or grain can be up to 52 feet long and have a height of around 12 feet.
+     */
 
-    public HeavyFreightCar(String shipper, String security, double netWeight, double grossWeight, double length, double height, int numberOfSeats){
-        this.shipper = shipper;
-        this.securityInformation = security;
-        this.netWeight = netWeight;
-        this.grossWeight = grossWeight;
+    public HeavyFreightCar(double length, double capacity){
         this.length = length;
-        this.height = height;
-        this.numberOfSeats = numberOfSeats;
+        this.Capacity = capacity;
         cont++;
         this.id = cont;
     }
 
     @Override
-    public String toString() {
-        return "HeavyFreightCar{" +
-                "shipper='" + shipper + '\'' +
-                ", netWeight=" + netWeight +
-                ", grossWeight=" + grossWeight +
-                ", numberOfSeats=" + numberOfSeats +
-                ", id=" + id +
-                '}';
+    public boolean electricalGrid() {
+        return false;
     }
 }

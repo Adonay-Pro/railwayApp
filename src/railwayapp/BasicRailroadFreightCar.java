@@ -1,32 +1,23 @@
 package railwayapp;
 
-public class BasicRailroadFreightCar {
+public class BasicRailroadFreightCar implements Railroad {
 
     public static int cont=0;
-    String shipper, securityInformation;
-    double netWeight, grossWeight, length, height;
-    int numberOfSeats, id;
+    double capacity;//ranges from 70 to 100 tons.
+    int  id, slidingDoors; /*Freight cars are equipped with large sliding doors on both sides of the car, which can be opened to load and unload cargo.
+    Some boxcars may have additional doors on the ends of the car for easier loading and unloading.*/
 
-    public BasicRailroadFreightCar(String shipper, String security, double netWeight, double grossWeight, double length, double height, int numberOfSeats){
-        this.shipper = shipper;
-        this.securityInformation = security;
-        this.netWeight = netWeight;
-        this.grossWeight = grossWeight;
-        this.length = length;
-        this.height = height;
-        this.numberOfSeats = numberOfSeats;
+
+    public BasicRailroadFreightCar(double capacity, int slidingDoors){
+        this.capacity = capacity;
+        this.slidingDoors = slidingDoors
         cont++;
         this.id = cont;
     }
 
+
     @Override
-    public String toString() {
-        return "BasicRailroadFreightCar{" +
-                "shipper='" + shipper + '\'' +
-                ", netWeight=" + netWeight +
-                ", grossWeight=" + grossWeight +
-                ", numberOfSeats=" + numberOfSeats +
-                ", id=" + id +
-                '}';
+    public boolean electricalGrid() {
+        return false;
     }
 }
